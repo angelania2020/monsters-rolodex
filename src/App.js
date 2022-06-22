@@ -10,6 +10,7 @@ const App = () => {
   const [searchField, setSearchField] = useState('');
   // console.log(searchField);  // it is a string
   // console.log({searchField});  // to convert into an object
+  const [title, setTitle] = useState('');
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
@@ -37,14 +38,24 @@ const App = () => {
     setSearchField(searchFieldString);
   }
 
+  const onTitleChange = (event) => {
+    const searchFieldString = event.target.value;
+
+    setTitle(searchFieldString);
+  }
+
   // console.log(filteredMonsters);
 
   return (
     <div className="App" >
 
-      <h1 className='app-title'>Monsters Rolodex</h1>
+      <h1 className='app-title'>{title}</h1>
 
-      <SearchBox onChangeHandler={onSearchChange} placeholder='Search mosters' className='monsters-search-box' />
+      <SearchBox className='monsters-search-box' onChangeHandler={onSearchChange} placeholder='Search mosters' />
+
+      <br />
+
+      <SearchBox className='title-search-box' onChangeHandler={onTitleChange} placeholder='Set title' />
 
       <CardList monsters={filteredMonsters} />
     </div>)

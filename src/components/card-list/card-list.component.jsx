@@ -6,7 +6,7 @@ const CardList = ({ monsters }) => (  //destructuring
     <div className='card-list' >
         {monsters.map((monster) => {
             return (
-                <Card monster={monster} />
+                <Card key={monster.id} monster={monster} />
             );
         })}
     </div>
