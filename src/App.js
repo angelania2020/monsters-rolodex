@@ -5,7 +5,8 @@ import './App.css';
 
 const App = () => {
 
-  // console.log('render')
+  // console.log('rendered')
+
   const [searchField, setSearchField] = useState('');
   // console.log(searchField);  // it is a string
   // console.log({searchField});  // to convert into an object
